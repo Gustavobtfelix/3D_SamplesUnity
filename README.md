@@ -1,0 +1,1 @@
+To run the project outside Unity go to Builds and run 3D_Samples.exe
