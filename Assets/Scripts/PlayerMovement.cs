@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed = 15f;
     public TextMeshProUGUI countText;
+    public GameObject winTextObject;
     private Rigidbody rb;
     private int count;
     private float movementX;
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
         count = 0;
 
         SetCountText();
+        winTextObject.SetActive(false);
     }
 
     // movimento
@@ -41,6 +43,10 @@ public class PlayerMovement : MonoBehaviour
     void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
+        if(count>= 6)
+        {
+            winTextObject.SetActive(true);
+        }
     }
 
     private void OnTriggerEnter(Collider other) 
